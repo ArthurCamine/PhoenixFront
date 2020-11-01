@@ -1,0 +1,22 @@
+<div class="post">
+    <div class="post-header">
+        <img [src]="!!post.usuario.urlFoto ? post.usuario.urlFoto : '../../../../assets/images/usuario.svg'" alt="Dados do usuário" class="usuario-post" title="Informações do usuário">
+        <div class="informacoes-usuario-post">
+            <p class="bold">{{ post.usuario.nome }} </p>
+            <p>{{ post.dataPublicacao.toLocaleString() | date: 'dd/MM/yyyy' }}</p>
+        </div>
+    </div>
+
+    <div class="post-body">
+        <p>{{ post.descricao }}</p>
+    </div>
+
+    <div class="post-footer">
+        <span class="quantidade-likes block">{{ post.quantidadeLikes }} curtida{{ post.quantidadeLikes == 1 ? '' : 's'}}</span>
+
+        <div class="block post-like">
+            <img src="../../../../assets/images/like.svg" alt="Curtir" class="img-like">
+            <span>Gostei</span>
+        </div>
+    </div>
+</div>

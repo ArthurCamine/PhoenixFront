@@ -1,0 +1,113 @@
+.publicacao {
+  margin-bottom: 10px;
+  padding: 20px;
+  border: $border-input;
+  background-color: $color-white-1;
+
+  .iniciar-publicacao-icon {
+    width: 30px;
+    background-color: $color-white-1;
+  }
+
+  .publicacao-titulo {
+    margin-left: 10px;
+    vertical-align: super;
+    background-color: $color-white-1;
+  }
+
+  .descricao-publicacao {
+    margin-left: 10px;
+    border: none;
+    vertical-align: middle;
+    width: 93%;
+    resize: none;
+    font-size: $fontSize-regular;
+    height: 100px;
+    background-color: $color-white-1;
+
+    @media screen and (max-width: 800px) {
+      width:85%;
+    }
+  }
+
+  .botoes-publicacao {
+    margin-top: 10px;
+    background-color: $color-white-1;
+
+    @media screen and (max-width: 800px) {
+      .botao {
+        width: rem(100) !important;
+      }
+    }
+
+    .botao-sucesso {
+      margin-right: 10px;
+    }
+  }
+}
+
+.post {
+  width: 100%;
+  background-color: $color-white-1;
+  border: $border-input;
+  margin-bottom: 10px;
+
+  * {
+    background-color: $color-white-1;
+  }
+
+  .post-header {
+    padding: 20px 20px 10px;
+
+    .usuario-post {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      float: left;
+    }
+
+    .informacoes-usuario-post {
+      margin-left: 50px;
+      font-size: $fontSize-p;
+
+      p:last-of-type {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .post-body {
+    margin-top: 10px;
+    display: block;
+    padding: 5px 20px 5px;
+  }
+
+  .post-footer {
+    padding: 0px 20px 10px;
+
+    span {
+      padding: 10px 0;
+
+      &.quantidade-likes {
+        border-bottom: 1px solid $color-grey-1;
+      }
+    }
+
+    .post-like {
+      margin-top: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .img-like {
+        width: 20px;
+        margin-right: 5px;
+      }
+
+      span {
+        vertical-align: top;
+      }
+    }
+  }
+}

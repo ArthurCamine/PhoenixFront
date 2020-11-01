@@ -1,0 +1,95 @@
+<div class="login">
+    <div class="login-header">
+        <img class="logo" src="../../assets/images/logo.png" alt="Logo Phoenix" routerLink="">
+
+        <div class="login-header-dados">
+            <div class="div-login">
+                <form [formGroup]="formLogin">
+                    <input type="text" placeholder="Email" class="input-text" formControlName="email">
+                    <input type="password" placeholder="Senha" class="input-text" formControlName="senha">
+                    <button class="botao botao-sucesso" [disabled]="formLogin.invalid" (click)="login()">Entrar</button>
+                </form>
+            </div>
+
+            <div class="div-esqueceu-sua-senha">
+                <a href="" class="link">Esqueci minha senha</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="dados-cadastro">
+        <span class="titulo-cadastro">Criar uma conta</span>
+
+        <form class="form-cadastro" [formGroup]="formCadastro">
+            <div class="radio-buttons">
+                <label for="" class="span-large block">Você tem vontade de ser um doador de órgãos?</label>
+
+                <input type="radio" name="desejoDoacaoOrgao" [value]="true" id="desejoDoacaoOrgaoSim" formControlName="desejoDoacaoOrgao">
+                <label for="desejoDoacaoOrgaoSim" class="hover-pointer">Sim</label>
+
+                <input type="radio" name="desejoDoacaoOrgao" [value]="false" id="desejoDoacaoOrgaoNao" formControlName="desejoDoacaoOrgao">
+                <label for="desejoDoacaoOrgaoNao" class="hover-pointer">Não</label>
+            </div>
+
+            <div class="block">
+                <div class="block">
+                    <span class="span-error block" *ngIf="formCadastro.get('nome').touched && formCadastro.get('nome').invalid">
+                        O nome é obrigatório e deve conter pelo menos 2 letras
+                    </span>
+                    <span class="span-error block" *ngIf="formCadastro.get('sobrenome').touched && formCadastro.get('sobrenome').invalid">
+                        O sobrenome é obrigatório e deve conter pelo menos 2 letras
+                    </span>
+                </div>
+
+                <input type="text" [class.input-error]="formCadastro.get('nome').touched && formCadastro.get('nome').invalid"
+                    name="nome" placeholder="Nome" class="input-text" formControlName="nome">
+
+                <input type="text" [class.input-error]="formCadastro.get('sobrenome').touched && formCadastro.get('sobrenome').invalid"
+                    name="sobrenome" placeholder="Sobrenome" class="input-text" formControlName="sobrenome">
+            </div>
+
+            <div class="block">
+                <div class="block">
+                    <span class="span-error block" *ngIf="formCadastro.get('email').touched && formCadastro.get('email').invalid">
+                        O email é obrigatório e deve um email válido
+                    </span>
+                </div>
+
+                <input type="text" [class.input-error]="formCadastro.get('email').touched && formCadastro.get('email').invalid"
+                    name="email" placeholder="Email" class="input-text-large" formControlName="email">
+            </div>
+
+            <div class="block" formGroupName="formSenha">
+                <div class="block">
+                    <span class="span-error block"
+                        *ngIf="formCadastro.get('formSenha.senha').touched && formCadastro.get('formSenha').invalid && formCadastro.get('formSenha.confirmarSenha').touched ||
+                                formCadastro.get('formSenha.confirmarSenha').touched && formCadastro.get('formSenha').invalid && formCadastro.get('formSenha.senha').touched">
+                        As senhas são obrigatórias, devem conter pelo menos 6 caracteres e devem conferir.
+                    </span>
+                </div>
+
+                <input type="password"name="senha" placeholder="Senha" class="input-text" formControlName="senha"
+                    [class.input-error]="formCadastro.get('formSenha.senha').touched
+                        && formCadastro.get('formSenha').invalid
+                        && formCadastro.get('formSenha.confirmarSenha').touched">
+                <input type="password" name="confirmarSenha" placeholder="Confirme sua senha" class="input-text" formControlName="confirmarSenha"
+                    [class.input-error]="formCadastro.get('formSenha.confirmarSenha').touched
+                        && formCadastro.get('formSenha').invalid
+                        && formCadastro.get('formSenha.senha').touched">
+
+                <app-select-data (diaChange)="atualizarDiaNascimento($event)" (mesChange)="atualizarMesNascimento($event)" (anoChange)="atualizarAnoNascimento($event)">  
+                </app-select-data>
+
+            </div>
+
+            <div class="block div-botao">
+                <button class="botao botao-sucesso botao-cadastrar" [disabled]="formCadastro.invalid" (click)="cadastrar()">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+    <div class="banner-phoenix">
+        <img src="../../assets/images/img_construir.png" alt="Banner Phoenix">
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>

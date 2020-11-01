@@ -1,0 +1,18 @@
+<app-layout>
+    <div class="publicacao" [class.hover-pointer]="!modoEdicao" *ngIf="!!this.usuarioLogado.instituicao && !this.modoEdicao" (click)="editar()">
+        <img src="../../../assets/images/criar-post.svg" alt="Iniciar publicação" class="iniciar-publicacao-icon">
+        <span class="publicacao-titulo">Comece sua publicação</span>   
+    </div>
+
+    <div class="publicacao" *ngIf="modoEdicao">
+        <img src="../../../assets/images/criar-post.svg" alt="Iniciar publicação" class="iniciar-publicacao-icon">
+        <textarea type="text" class="descricao-publicacao" autofocus [(ngModel)]="descricaoPublicacao" placeholder="Comece sua publicação"></textarea>
+
+        <div class="botoes-publicacao">
+            <button class="botao botao-sucesso" (click)="publicar()">Publicar</button>
+            <button class="botao botao-cancelar" (click)="descartarPublicacao()">Descartar</button>
+        </div>
+    </div>
+
+    <app-card-post *ngFor="let post of posts" [post]="post"></app-card-post>
+</app-layout>

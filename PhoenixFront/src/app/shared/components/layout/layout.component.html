@@ -1,0 +1,54 @@
+<div class="header">
+    <img [routerLink]="['/feed']" src="../../../../assets/images/phoenix-no-name.svg" alt="Logo Phoenix" class="logo-layout">
+
+    <div class="float-right">
+        <img [routerLink]="['/feed']" src="../../../../assets/images/home.svg" alt="Feed" class="icones-acao" title="Feed">
+        <img [routerLink]="['/perfil']" src="../../../../assets/images/usuario.svg" alt="Dados do usuário" class="icones-acao" title="Editar usuário">
+        <img (click)="logout()" src="../../../../assets/images/sair.svg" alt="Sair" class="icones-acao" title="Sair">
+    </div>
+</div>
+
+<div class="container-central">
+  <div class="conteudo">
+      <ng-content></ng-content>
+  </div>
+
+  <div class="menu-lateral menu-direita">
+      <div class="dados">
+          <img src="../../../../assets/images/coracao.svg" alt="Coração" class="icone-orgao">
+          <span class="informacao-orgao">Em breve você poderá acessar este cartão para ter mais informações sobre as doações de coração.</span>
+      </div>
+
+      <div class="dados">
+        <img src="../../../../assets/images/rins.svg" alt="Rins" class="icone-orgao">
+        <span class="informacao-orgao">Em breve você poderá acessar este cartão para ter mais informações sobre as doações de rins.</span>
+      </div>
+
+      <div class="dados">
+          <img src="../../../../assets/images/figado.svg" alt="Fígado" class="icone-orgao">
+          <span class="informacao-orgao">Em breve você poderá acessar este cartão para ter mais informações sobre as doações de fígado.</span>
+      </div>
+
+      <div class="dados">
+          <img src="../../../../assets/images/olho.svg" alt="Córneas" class="icone-orgao">
+          <span class="informacao-orgao">Em breve você poderá acessar este cartão para ter mais informações sobre as doações de córneas.</span>
+      </div>
+
+      <div class="dados">
+          <img src="../../../../assets/images/pancreas.svg" alt="Pâncreas" class="icone-orgao">
+          <span class="informacao-orgao">Em breve você poderá acessar este cartão para ter mais informações sobre as doações de pâncreas.</span>
+      </div>
+
+      <div class="dados">
+          <img src="../../../../assets/images/pulmao.svg" alt="Pulmão" class="icone-orgao">
+          <span class="informacao-orgao">Em breve você poderá acessar este cartão para ter mais informações sobre as doações de pulmão.</span>
+      </div>
+
+      <div class="dados">
+          <img src="../../../../assets/images/esqueleto.svg" alt="Ossos" class="icone-orgao">
+          <span class="informacao-orgao">Em breve você poderá acessar este cartão para ter mais informações sobre as doações de ossos.</span>
+      </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>

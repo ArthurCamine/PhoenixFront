@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+    background-color: $background-main;
+    font-family: 'Roboto', 'Verdana', sans-serif;;
+    color: $color-text;
+    outline: 1px #63B370;
+}
+
+.logo {
+    width: rem(100);
+    @media screen and (max-width: 800px) {
+      width: rem(50);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+}
+
+.input-text, .form-select, .input-text-large {
+    border-radius: $border-radius-input;
+    padding: 4px 10px;
+    background-color: $color-white-1;
+    border: $border-input;
+}
+
+.input-text {
+    height: 25px;
+    width: 43%;
+
+    @media screen and (max-width: 800px) {
+      width: 92%;
+    }
+
+    &:read-only {
+      background-color: $background-main !important;
+    }
+}
+
+.form-select {
+  &:not(:first-of-type) {
+      margin-left: 10px;
+  }
+}
+
+.input-error {
+    border: 1px solid $color-red-error;
+}
+
+.span-error {
+    color: $color-red-error;
+    font-size: $fontSize-p;
+    margin-top: rem(-15) !important;
+    float: left;
+    @media screen and (max-width: 1367px) {
+      font-size: $fontSize-xp;
+      margin-top: rem(-12) !important;
+    }
+
+}
+
+.input-text-large {
+    height: 25px;
+    width: 91%;
+    @media screen and (max-width: 1367px) {
+      width: 92%;
+    }
+}
+
+.font-size-base {
+    font-size: $fontSize-base;
+}
+
+.botao {
+  height: rem(35);
+  width: rem(120);
+  border-radius: $border-radius-button;
+  padding: 4px 10px;
+  @media screen and (max-width: 800px) {
+    width: rem(63);
+  }
+
+  &:hover {
+      cursor: pointer;
+  }
+
+  &:disabled {
+      background-color: $disabled-button;
+      border: 1px solid $disabled-button;
+
+      &:hover {
+          cursor: unset;
+          background-color: $disabled-button;
+      }
+  }
+}
+
+.botao-sucesso {
+  background-color: $sucess-button;
+  border: 1px solid $sucess-button;
+  color: $color-white-1;
+
+  &:hover {
+      background-color: $sucess-button-hover;
+  }
+}
+
+.botao-cancelar {
+  background-color: $cancel-button;
+  border: 1px solid $cancel-button;
+  color: $color-black-1;
+
+  &:hover {
+      color: $color-white-1;
+      background-color: $cancel-button-hover;
+  }
+}
+
+.botao-cadastrar {
+  @media screen and (max-width: 800px) {
+    width: rem(90);
+  }
+}
+
+.link {
+    text-decoration: none;
+    color: $color-grey-1;
+
+    &:hover {
+        cursor: pointer;
+        color: $color-grey-2;
+    }
+}
+
+.span-large {
+    @media screen and (max-width: 1367px) {
+      font-size: $fontSize-base;
+    }
+    @media screen and (max-width: 800px) {
+      font-size: $fontSize-base;
+    }
+}
+
+.block {
+    display: block;
+}
+
+.hover-pointer {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.bold {
+    font-weight: bold;
+}

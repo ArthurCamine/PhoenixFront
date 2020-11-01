@@ -1,0 +1,49 @@
+<app-layout>
+  <div class="perfil">
+    <div class="foto-perfil">
+      <img [src]="!!usuario.urlFoto ? usuario.urlFoto : '../../../../assets/images/usuario.svg'" alt="Alterar foto">
+    </div>
+
+    <div class="container-form">
+      <form class="perfil-informacoes" [formGroup]="form">
+        <div class="container-opcao-doador">
+          <label class="perfil-info label-margin-bottom block bold">Gostaria de ser um doador de órgãos?</label>
+
+          <input type="radio" name="desejoDoacaoOrgao" [value]="true" id="desejoDoacaoOrgaoSim"
+            formControlName="desejoDoacaoOrgao">
+          <label for="desejoDoacaoOrgaoSim" class="hover-pointer">Sim</label>
+
+          <input type="radio" name="desejoDoacaoOrgao" [value]="false" id="desejoDoacaoOrgaoNao"
+            formControlName="desejoDoacaoOrgao">
+          <label for="desejoDoacaoOrgaoNao" class="hover-pointer">Não</label>
+        </div>
+
+        <div class="block">
+          <div class="perfil-input">
+            <label class="perfil-info block bold">Nome</label>
+            <input type="text" class="input-text" placeholder="Nome" formControlName="nome">
+
+            <label class="perfil-info block bold">Email</label>
+            <input type="text" class="input-text" placeholder="Email" formControlName="email">
+
+            <label class="perfil-info block bold">Senha</label>
+            <input type="password" class="input-text" placeholder="Senha" formControlName="senhaAtual">
+
+            <label class="perfil-info block bold">Nova senha</label>
+            <input type="password" class="input-text" placeholder="Nova senha" formControlName="novaSenha">
+          </div>
+        </div>
+
+        <div class="container-data-nascimento">
+          <app-select-data [diaInicial]="diaNascimento" [mesInicial]="mesNascimento" [anoInicial]="anoNascimento"
+            (diaChange)="atualizarDiaNascimento($event)" (mesChange)="atualizarMesNascimento($event)" (anoChange)="atualizarAnoNascimento($event)">  
+          </app-select-data>
+        </div>
+      </form>
+    </div>
+
+    <div class="perfil-acoes">
+      <button class="botao botao-sucesso" (click)="salvar()">Salvar</button>
+    </div>
+  </div>
+</app-layout>

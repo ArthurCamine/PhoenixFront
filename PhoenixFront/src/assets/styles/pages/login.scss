@@ -1,0 +1,113 @@
+.login {
+    padding: rem(30) rem(140);
+    @media screen and (max-width: 800px) {
+      padding: rem(3) rem(14);
+    }
+
+    .login-header {
+        width: 100%;
+        margin-bottom: 7%;
+        @media screen and (max-width: 1367px) {
+          margin-bottom: 2%;
+        }
+
+        .login-header-dados {
+            float: right;
+            // margin-top: 40px;
+            @media screen and (max-width: 800px) {
+              width: 75%;
+              padding-top: rem(10);
+            }
+
+            .input-text {
+                margin-right: rem(10);
+                width: rem(200);
+                @media screen and (max-width: 800px) {
+                  margin-right: rem(10);
+                  width: rem(60);
+                }
+            }
+        }
+
+        .div-esqueceu-sua-senha {
+            // margin-top: 10px;
+            margin-left: 14.7rem;
+            @media screen and (max-width: 800px) {
+              margin-left: rem(45);
+              font-size: $fontSize-p;
+            }
+        }
+    }
+
+    .dados-cadastro {
+        width: 45%;
+        float: left;
+        @media screen and (max-width: 800px) {
+          width: 100%;
+          margin-top: rem(10);
+        }
+
+        .titulo-cadastro {
+            font-size: $fontSize-jumbo;
+            color: $color-text;
+            display: block;
+            margin-bottom: 30px;
+            @media screen and (max-width: 800px) {
+              font-size: $fontSize-large;
+              margin-bottom: rem(10);
+            }
+        }
+
+        .form-cadastro {
+            label {
+                margin-bottom: 15px;
+            }
+
+            .radio-buttons {
+              margin-bottom: 1em;
+            }
+
+            input[type='radio'] {
+                margin-right: 5px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                &:not(:first-of-type) {
+                    margin-left: 20px;
+                }
+            }
+
+            .block {
+                margin-top: rem(15);
+
+                input {
+                    &:not(:first-of-type) {
+                        margin-left: 2%;
+                        @media screen and (max-width: 800px) {
+                          margin-left: 0;
+                          margin-top: rem(15);
+                        }
+                    }
+                }
+            }
+
+            .div-botao {
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .banner-phoenix {
+        width: 49%;
+        float: left;
+        @media screen and (max-width: 800px) {
+          display: none;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
